@@ -33,6 +33,24 @@ public class GestorNotas {
 		}
 		
 	}
+	
+	
+	public static double notaMaxima(double n1, double n2, double n3) {
+		
+	
+		if (n1 > n2 && n1 > n3) {
+			
+		return n1;
+			
+		} else if (n2 > n1 && n2 > n3) {
+			
+			return n2;
+			
+		}
+		else
+		
+		return n3;
+	}
 
 	public static void main(String[] args) {
 
@@ -45,7 +63,8 @@ public class GestorNotas {
 		System.out.println(estaAprobado(mediaCalculada));
 		
 		System.out.println(notaTexto(mediaCalculada));
-
+		
+		System.out.println(GestorNotas.notaMaxima(5, 6, 7));
 	}
 
 }

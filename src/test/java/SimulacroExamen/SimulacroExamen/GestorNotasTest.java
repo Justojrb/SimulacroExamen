@@ -24,10 +24,20 @@ public class GestorNotasTest {
 
 	}
 
-	void tipoNota () {
-    	GestorNotas g = new GestorNotas();
-    	assertEquals("APROBADA Y NOTABLE", GestorNotas.notaTexto(8));
+	@Test
+	void tipoNota() {
+		GestorNotas g = new GestorNotas();
+		assertEquals("APROBADA Y NOTABLE", GestorNotas.notaTexto(8));
 
+	}
 
- }
+	@Test
+
+	void notaMax() {
+		double n1 = 10;
+		double n2 = 8;
+		double n3 = 7;
+		double resultado = gestorNotas.notaMaxima(n1, n2, n3);
+		assertEquals(10, resultado);
+	}
 }
