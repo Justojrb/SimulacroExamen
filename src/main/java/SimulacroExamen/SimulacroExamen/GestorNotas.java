@@ -3,7 +3,7 @@ package SimulacroExamen.SimulacroExamen;
 public class GestorNotas {
 
 	public double calcularMedia(double n1, double n2, double n3) {
-		return (n1 + n2 + n3) /3;
+		return (n1 + n2 + n3) / 3;
 
 	}
 
@@ -17,27 +17,34 @@ public class GestorNotas {
 
 			return false;
 		}
-		
 
 	}
 
 	public static String notaTexto(double media) {
 		if (media < 5) {
-		    return "SUSPENSA";
+			return "suspenso";
 		} else if (media >= 5 && media < 7) {
-		    return "APROBADA Y SUFICIENTE";
+			return "aprobado y suficiente";
 		} else if (media >= 7 && media < 9) {
-		    return "APROBADA Y NOTABLE";
+			return "aprobado y notable";
 		} else {
-		    return "APROBADA Y SOBRESALIENTE";
+			return "aprobado y sobresaliente";
 		}
-		
+
 	}
-	
-	
+
 	public static double notaMaxima(double n1, double n2, double n3) {
 		
-	
+		if (n1 < 0 ||  n2 < 0 || n3 < 0 ) {
+			
+			throw new IllegalArgumentException("La nota no puede ser un número negativo");
+			
+		} if (n1 > 10 || n2 > 10 || n3 > 10) {
+			throw new IllegalArgumentException("La nota no puede ser un número mayor que 10");
+			
+		}  
+		
+		
 		if (n1 > n2 && n1 > n3) {
 			
 		return n1;
@@ -47,10 +54,11 @@ public class GestorNotas {
 			return n2;
 			
 		}
-		else
 		
 		return n3;
 	}
+
+	
 
 	public static void main(String[] args) {
 
@@ -58,13 +66,13 @@ public class GestorNotas {
 
 		double mediaCalculada = gestorNotas.calcularMedia(5, 7, 8);
 
-		System.out.println("LA MEDIA ES : " + mediaCalculada);
+		System.out.println("la media es : " + mediaCalculada);
 
 		System.out.println(estaAprobado(mediaCalculada));
-		
+
 		System.out.println(notaTexto(mediaCalculada));
-		
-		System.out.println(GestorNotas.notaMaxima(5, 6, 7));
+
+		System.out.println(GestorNotas.notaMaxima(11, 6, 9));
 	}
 
 }
