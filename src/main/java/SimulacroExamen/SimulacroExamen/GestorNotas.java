@@ -72,7 +72,7 @@ public class GestorNotas {
 
 		System.out.println(notaTexto(mediaCalculada));
 
-		System.out.println(GestorNotas.notaMaxima(11, 6, 9));
+		System.out.println(GestorNotas.notaMaxima(10, 6, 9));
 	}
 
 }
