@@ -27,7 +27,7 @@ public class GestorNotasTest {
 	@Test
 	void tipoNota() {
 		GestorNotas g = new GestorNotas();
-		assertEquals("APROBADA Y NOTABLE", GestorNotas.notaTexto(8));
+		assertEquals("aprobado y notable", GestorNotas.notaTexto(8));
 
 	}
 
